@@ -42,13 +42,3 @@ public class Variable01 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
