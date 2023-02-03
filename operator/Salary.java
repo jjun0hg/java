@@ -21,8 +21,8 @@ public class Salary {
 		double fee = sum*ratio;
 		double month = sum - fee;
 		
-		System.out.println("***" + name + "부장 월급" + "***");
-		DecimalFormat df = new DecimalFormat();
+		System.out.println("***" + name +" " + rank +" "+ "월급" + "***");
+		DecimalFormat df = new DecimalFormat("###,###");
 		System.out.println("기본급 : " + df.format(money) + "원"  );
 		System.out.println("수당 : " + df.format(plus));
 		System.out.println("합계 : " + df.format(sum));
