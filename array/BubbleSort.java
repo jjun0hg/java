@@ -16,12 +16,11 @@ public class BubbleSort {
 		//내림차순(DESCENDING)
 		int temp;
 		for(int i=0; i<ar.length; i++) {
-			int j=0;
-			for(int k = j+1; k<ar.length; k++) {
-				if(ar[i] < ar[k]) {
-					temp = ar[i];
-					ar[i] = ar[k];
-					ar[k] = temp;
+			for(int j=0; j<ar.length-1-i; j++) {
+				if(ar[j] < ar[j+1]) {
+					temp = ar[j];
+					ar[j] = ar[j+1];
+					ar[j+1] = temp;
 			}
 		}System.out.println();
 	}// sort 후
