@@ -15,7 +15,7 @@ public class Div implements Compute {
 	}
 	@Override
 	public void disp() {
-		System.out.println(x + " / " + y + " = " + (x/y));
+		System.out.println(x + " / " + y + " = " + ((double)x/y));
 
 	}
 
