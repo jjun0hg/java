@@ -6,8 +6,8 @@ public class PersonMain {
 
 	public ArrayList<PersonDTO> init() { // 구현부
 		PersonDTO aa = new PersonDTO("홍길동", 25);
-		PersonDTO bb = new PersonDTO("프로도", 30);
-		PersonDTO cc = new PersonDTO("라이언", 40);
+		PersonDTO bb = new PersonDTO("프로도", 40);
+		PersonDTO cc = new PersonDTO("라이언", 35);
 
 		ArrayList<PersonDTO> arrayList = new ArrayList<PersonDTO>();
 		arrayList.add(aa);
@@ -24,11 +24,11 @@ public class PersonMain {
 
 		for (PersonDTO personDTO : list) {
 			System.out.println(personDTO.getName() + "\t" + personDTO.getAge());
-		}//for
-		
+		} // for
+
 		for (PersonDTO personDTO : list) {
 			System.out.println(personDTO.getName() + "\t" + personDTO.getAge());
-		}//for
+		} // for
 
 	}
 }

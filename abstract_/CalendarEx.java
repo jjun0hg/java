@@ -11,7 +11,13 @@ public class CalendarEx {
 	private int day;
 	private int[] days;
 	
-	void calc(){
+	public void calc(){
+		//Calendar cal = Calendar.getInstance();
+		//cal.set(Calendar.YEAR, this.year); 년도
+		//cal.set(Calendar.MONTH, this.month-1); 월
+		//cal.set(Calendar.DAY_OF_MONTH,1 ); 일
+		//cal.set(year, month-1 , 1);
+		
 		do{
 			System.out.print("년도 입력 : ");
 			Y = sc.nextInt();
@@ -23,7 +29,7 @@ public class CalendarEx {
 		}while (M<1 || M>12);
 	}
 	
-	void date(){
+	public void date(){
 		if ((Y%4==0 && Y%100!=0) || Y%400==0)	// 윤년
 			months[1] = 29;
 		else									// 평년
