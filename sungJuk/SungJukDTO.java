@@ -4,7 +4,7 @@
 //       calc - 총점, 평균하는 계산
 package sungJuk;
 
-public class SungJukDTO { //1인분
+public class SungJukDTO implements Comparable<SungJukDTO> { //1인분
 //필드
 	private int no;
 	private String name;
@@ -67,6 +67,12 @@ public class SungJukDTO { //1인분
 	
 	@Override
 		public String toString() {
-			return no+"\t" +name +"\t" + kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + avg;
+			return no+"\t" +name +"\t" + kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + avg +"\n";
 		}
+	@Override
+	public int compareTo(SungJukDTO dto) {
+		if(this.tot > dto.tot) return -1;
+		else if(this.tot < dto.tot) return 1;
+		else return 0;
+	}
 }

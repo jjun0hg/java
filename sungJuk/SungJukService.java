@@ -22,7 +22,7 @@ public class SungJukService {
 			System.out.println(" 5. 정렬");
 			System.out.println(" 6. 끝");
 			System.out.println("*******************");
-			System.out.print("번호 : ");
+			System.out.print("메뉴 번호 입력 : ");
 			num = sc.nextInt();
 			if(num == 6) break;
 			

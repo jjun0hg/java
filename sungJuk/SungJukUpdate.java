@@ -12,6 +12,14 @@ public class SungJukUpdate implements SungJuk {
 		System.out.println("수정할 번호를 입력해주세요");
 		int num = sc.nextInt();
 		
+//		int sw;
+//		for (SungJukDTO sungJukDTO : arrayList) {
+//			if(sungJukDTO.getNo() == num) {
+//				sw = 1;
+//				break;
+//			}
+		
+		
 		for(int i =0; i<arrayList.size(); i++) {
 			if(arrayList.get(i).getNo() == num) {
 			System.out.println("수정할 이름을 입력해주세요");
@@ -31,3 +39,6 @@ public class SungJukUpdate implements SungJuk {
 	}
 }
 }
+
+
+

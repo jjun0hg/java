@@ -30,7 +30,7 @@ public class SungJukInsert implements SungJuk {
 		
 		arrayList.add(sungJukDTO);
 		
-		System.out.println("입력하였습니다.");
+		System.out.println("입력되었습니다.");
 	}
 }
 
