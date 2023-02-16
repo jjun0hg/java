@@ -24,7 +24,7 @@ public class SungJukSort implements SungJuk {
 			Comparator<SungJukDTO> com = new Comparator<SungJukDTO>() {
 				@Override
 				public int compare(SungJukDTO dto1, SungJukDTO dto2) {
-					return dto1.getName().compareTo(dto2.getName()) ; // - 오름차순
+					return dto1.getName().compareTo(dto2.getName()); // - 오름차순
 				}
 			};
 			Collections.sort(arrayList, com);
