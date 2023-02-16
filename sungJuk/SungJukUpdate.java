@@ -18,7 +18,7 @@ public class SungJukUpdate implements SungJuk {
 //				sw = 1;
 //				break;
 //			}
-		
+ 		
 		
 		for(int i =0; i<arrayList.size(); i++) {
 			if(arrayList.get(i).getNo() == num) {
