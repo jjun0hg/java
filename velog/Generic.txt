@@ -1,0 +1,13 @@
+다형성
+
+부모 = 자식
+
+자식 = (자식)부모 // 형변환, Casting
+
+double avg = (double)tot / 3;
+
+String a = "apple"
+String b = a;
+Object ob = a; //부모 = 자식
+
+String c = (String)ob; //부모 = 자식(부모)

@@ -1,0 +1,32 @@
+Application	------------------------------>		키보드,마우스 	
+			스트림(Stream)
+응용프로그램	<------------------------------		     등등...
+
+*byte 단위
+
+BufferedOutputStream => 출력 할 메소드가 2개
+
+DataOutputStream => 자료형 별로 메소드가 있다.
+
+PrintStream => 자료형 별로 메소드가 있다. Overload되어있다.
+	
+System.out.print()   ======\\\		out의 자료형은 PrintStream 이다.
+system.out.println() ======///
+
+		BufferedOutputStream	   
+		DataOutputStream	   	FileInputStream
+DataStream.java ====================> 버퍼 ====================> result.txt
+		<====================      <====================
+						FileoutputStream
+
+엔터
+1. 다음줄 \n
+2. 맨앞	  \r
+
+
+		ObjectOutputStream		FileOutputStream
+DataStream.java ===================> buffer ================> result2.txt
+		<===================	   <===================
+
+
+

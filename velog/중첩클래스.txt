@@ -1,0 +1,13 @@
+class 클1 {
+
+	static class 클2{}
+
+	class 클2{} // 1 (inner class)
+
+	메소드() {
+		class 클3 {} 	// 2
+	}
+	
+	{} // 3
+
+}//클1

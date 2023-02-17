@@ -1,0 +1,59 @@
+* 메소드 ()
+1. 구현(메소드가 해야 하는 일(명령어)을 정의
+
+return형 메소드명(인수형 인수, 인수형 인수, .....){
+	명령어;
+	명령어;
+	명령어;
+}
+
+
+int sub(int a, int b) {...}
+String abc(int a){...}
+void sub(char a)
+
+public int sub(String a){
+
+	return 25;
+	
+
+}
+
+
+2. 호출
+객체.메소드(값1,값2 ....)
+클래스명.메소드(값1,값2,....) -> static인 경우
+
+
+생성자, setter
+getter
+
+자바- 다중상속 x (다중상속의 개념을 가져오기 위해 interface..상속받은것처럼)
+
+Override
+부모클래스와 자식클래스에 똑같은 메소드 존재
+모든 우선권은 자식클래스가 갖는다.
+
+
+
+
+
+			Overload(쌍둥이)					Override
+1. 하나의 클래스						부모클래스와 자식클래스
+2. 메소드 이름이 똑같다						다 똑같아야 한다.
+3. 인수 개수, 인수형						modifier(접근제한자) public, protected, private
+								단, 자식 클래스 modifier가 더 커야한다.
+
+class AA{							class AA{
+	public void sub(int b){}				public void sub(int a){}					
+}								}
+class BB{							class BB extends AA{
+	public void sub(int a){}					public void sub(int a, int b){} -X
+	public void sub(int a, int b){}					public int sub(int a){}  -X
+	public void sub(char a){}					public void sub(int a){} -O
+}
+
+
+부모는 모든 자식 클래스들을 참조할수 없다 = 다형성
+부모 = 자식 | 자식=(자식)부모
+

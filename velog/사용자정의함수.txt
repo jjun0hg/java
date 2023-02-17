@@ -1,0 +1,40 @@
+* 메소드 ()
+- 명령어들의 집합체
+- main
+
+* 사용자 정의 함수
+1. 구현
+
+return형 메소드명(인수형 인수, 인수형 인수,...) {
+	body
+}
+
+2. 호출
+객체명.메소드명(값1, 값2,...)
+
+
+
+예외처리 - 생각지도 않은 에러
+1. 컴파일 - 예방용, 보험
+		try-catch, throws
+
+2. 실행	  - 개발자 실수
+	ArrayIndexOutOfBoundsException
+
+
+
+
+final -> override 불가
+
+abstract class AA{
+	public final void sub(){}
+	public abstract void disp();
+}
+
+class BB extends AA{
+	public void sub(){} -error, Override 하면 안된다.
+	public void disp(){} - 반드시 Override 해야한다.
+}
+
+
+

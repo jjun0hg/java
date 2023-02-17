@@ -1,0 +1,18 @@
+* implements 
+1. 반드시 모든 추상메소드를 Override
+
+2. 대신 Override 해주는 클래스 (우체국 택배)
+   Collection coll = new ArrayList();
+
+3. 메소드
+   Iterator 
+   Iterator it = coll.iterator();
+
+4. 익명 Inner 클래스 (키다리 아저씨가 추상메소드를 Override)
+
+
+
+
+
+
+

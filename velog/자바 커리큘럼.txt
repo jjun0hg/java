@@ -1,0 +1,11 @@
+plan
+WEB - APP
+1. Java
+2. DB - Oracle(CRUD), MySQL
+3. html/javascript/css
+4. JSP / MVC / MyBatis /jQuery(AJax)
+5. Spring Framework
+=> mini Project(2주~3주) (Spring + MyBatis + jQuery)
+6. Spring Boot / JPA / React.js,(Vue.js)
+
+=> 최종 Project
