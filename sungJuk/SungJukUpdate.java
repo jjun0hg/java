@@ -21,6 +21,7 @@ public class SungJukUpdate implements SungJuk {
  		
 		
 		
+		
 		for(int i =0; i<arrayList.size(); i++) {
 			if(arrayList.get(i).getNo() == num) {
 			System.out.println("수정할 이름을 입력해주세요");
