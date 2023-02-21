@@ -84,8 +84,109 @@ public class Student {
 
 			} catch (SQLException e) {
 				e.printStackTrace();
+			} finally {
+				try {
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 
+		}
+	}
+
+	public void SelectArticle() {
+		Scanner scanner = new Scanner(System.in);
+		while (true) {
+			System.out.println();
+			System.out.println("****************");
+			System.out.println("   1. 이름 검색");
+			System.out.println("   2. 전체 검색");
+			System.out.println("   3. 이전메뉴");
+			System.out.println("****************");
+			System.out.print("   번호 선택 : ");
+			num = scanner.nextInt();
+			if (num == 3)
+				break;
+			String name = null;
+			getConnection(); // 접속
+			if (num == 1) {
+				System.out.println("검색할 이름 입력 : ");
+				name = scanner.next();
+			}
+			getConnection();
+
+			String sql = null;
+			if (num == 1)
+				sql = "SELECT *FROM STUDENT WHERE NAME LIKE ?";
+			else
+				sql = "SELECT * FROM STUDENT";
+
+			try {
+				pstmt = conn.prepareStatement(sql); // 생성
+				if (num == 1)
+					pstmt.setString(1, "%" + name + "%");
+
+				rs = pstmt.executeQuery(); // 실행 - ResultSet 리턴
+
+				while (rs.next()) {
+					System.out.println("이름 = " + rs.getString("name") + "\t");
+
+					if (rs.getInt("code") == 1)
+						System.out.print("학번 = " + rs.getString("value") + "\t");
+					else if (rs.getInt("code") == 2)
+						System.out.print("과목 = " + rs.getString("value") + "\t");
+					else if (rs.getInt("code") == 3)
+						System.out.print("부서 = " + rs.getString("value") + "\t");
+				} // while
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (rs != null)
+						rs.close();
+
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	public void DeleteArticle() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("삭제할 이름 입력");
+		String name = sc.next();
+
+		getConnection();
+		String sql = "DELETE STUDENT WHERE NAME = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			int su = pstmt.executeUpdate();
+			System.out.println(su + "개의 행이 삭제 되었습니다.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -109,6 +210,14 @@ public class Student {
 			if (num == 1) {
 				Student student = new Student();
 				student.insertArticle();
+			}
+			if (num == 2) {
+				Student student = new Student();
+				student.SelectArticle();
+			}
+			if (num == 3) {
+				Student student = new Student();
+				student.DeleteArticle();
 			}
 			if (num == 4)
 				break;
