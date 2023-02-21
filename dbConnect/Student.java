@@ -66,61 +66,61 @@ public class Student {
 				e.printStackTrace();
 			} // if
 		}
-			if (num == 2) {
-				System.out.println("이름입력 : ");
-				String name2 = scanner.next();
-				System.out.println("과목입력 : ");
-				String sub = scanner.next();
-				String sql2 = "INSERT INTO STUDENT(name,value,code) VALUES(?, ?, 2)";
+		if (num == 2) {
+			System.out.println("이름입력 : ");
+			String name2 = scanner.next();
+			System.out.println("과목입력 : ");
+			String sub = scanner.next();
+			String sql2 = "INSERT INTO STUDENT(name,value,code) VALUES(?, ?, 2)";
 
+			try {
+				pstmt = conn.prepareStatement(sql2); // 생성
+				// ?에 데이터 대입
+				pstmt.setString(1, name2);
+				pstmt.setString(2, sub);
+				int su = pstmt.executeUpdate(); // 실행 - 개수 리턴
+				System.out.println(su + " 행 이(가) 삽입되었습니다.");
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} // if
+		}
+		if (num == 3) {
+
+			System.out.println("이름입력 : ");
+			String name3 = scanner.next();
+			System.out.println("부서입력 : ");
+			String bu = scanner.next();
+			String sql3 = "INSERT INTO STUDENT(name,value,code) VALUES(?, ?, 3)";
+			try {
+				pstmt = conn.prepareStatement(sql3); // 생성
+				// ?에 데이터 대입
+				pstmt.setString(1, name3);
+				pstmt.setString(2, bu);
+
+				int su = pstmt.executeUpdate(); // 실행 - 개수 리턴
+				System.out.println(su + " 행 이(가) 삽입되었습니다.");
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} // if
+
+			finally {
 				try {
-					pstmt = conn.prepareStatement(sql2); // 생성
-					// ?에 데이터 대입
-					pstmt.setString(1, name2);
-					pstmt.setString(2, sub);
-					int su = pstmt.executeUpdate(); // 실행 - 개수 리턴
-					System.out.println(su + " 행 이(가) 삽입되었습니다.");
-
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
 				} catch (SQLException e) {
 					e.printStackTrace();
-				} // if
-			}
-				if (num == 3) {
-					
-					System.out.println("이름입력 : ");
-					String name3 = scanner.next();
-					System.out.println("부서입력 : ");
-					String bu = scanner.next();
-					String sql3 = "INSERT INTO STUDENT(name,value,code) VALUES(?, ?, 3)";
-					try {
-						pstmt = conn.prepareStatement(sql3); // 생성
-						// ?에 데이터 대입
-						pstmt.setString(1, name3);
-						pstmt.setString(2, bu);
-
-						int su = pstmt.executeUpdate(); // 실행 - 개수 리턴
-						System.out.println(su + " 행 이(가) 삽입되었습니다.");
-
-					} catch (SQLException e) {
-						e.printStackTrace();
-					} // if
-
-					finally {
-						try {
-							if (pstmt != null)
-								pstmt.close();
-							if (conn != null)
-								conn.close();
-						} catch (SQLException e) {
-							e.printStackTrace();
-						}
-					}
 				}
 			}
+		}
+	}
 
 	public void menu() {
 
-			while(true) {
+		while (true) {
 			System.out.println();
 			System.out.println("*******************");
 			System.out.println();
@@ -135,14 +135,16 @@ public class Student {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("번호 선택 : ");
 			int num = sc.nextInt();
-			if (num==1) {
+			if (num == 1) {
 				Student student = new Student();
 				student.insertArticle();
 			}
-			if (num==4) break;	
+			if (num == 4)
+				break;
+		}
+		System.out.println("프로그램 종료합니다.");
 	}
-			System.out.println("프로그램 종료합니다.");
-	}
+
 	public static void main(String[] args) {
 		Student s = new Student();
 		s.menu();
